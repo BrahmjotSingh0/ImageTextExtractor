@@ -37,16 +37,44 @@
 
 .uploaded-file {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   margin-top: 20px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.edit-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.edit-button:hover {
+  background-color: var(--accent-color);
+  opacity: 0.8;
 }
 
 .uploaded-image-small {
   max-width: 100px;
   max-height: 100px;
   border-radius: 5px;
+}
+
+.warning-text {
+  margin-top: 10px;
+  color: var(--accent-color);
+  font-size: 14px;
+  text-align: center;
 }
 
 .extract-button {
@@ -57,6 +85,7 @@
   color: var(--primary-color);
   font-size: 16px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .extract-button:hover {

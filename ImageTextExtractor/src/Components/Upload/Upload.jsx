@@ -25,22 +25,21 @@ const Upload = () => {
   };
 
   const handleExtractText = async () => {
-    if (croppedImage) {
-      setLoading(true);
-      try {
-        const { data: { text } } = await Tesseract.recognize(
-          croppedImage,
-          'eng',
-          {
-            logger: (m) => console.log(m),
-          }
-        );
-        setExtractedText(text);
-      } catch (error) {
-        console.error('Error extracting text from image:', error);
-      } finally {
-        setLoading(false);
-      }
+    setLoading(true);
+    try {
+      const imageSrc = croppedImage || URL.createObjectURL(selectedFile);
+      const { data: { text } } = await Tesseract.recognize(
+        imageSrc,
+        'eng',
+        {
+          logger: (m) => console.log(m),
+        }
+      );
+      setExtractedText(text);
+    } catch (error) {
+      console.error('Error extracting text from image:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -117,12 +116,16 @@ const Upload = () => {
       {selectedFile && (
         <div className="uploaded-file">
           {loading && <p>Loading...</p>}
-          <img
-            src={croppedImage || URL.createObjectURL(selectedFile)}
-            alt="Uploaded"
-            className="uploaded-image-small"
-            onClick={() => setShowOverlay(true)}
-          />
+          <div className="image-container">
+            <button className="edit-button" onClick={() => setShowOverlay(true)}>✏️ Edit</button>
+            <img
+              src={croppedImage || URL.createObjectURL(selectedFile)}
+              alt="Uploaded"
+              className="uploaded-image-small"
+              onClick={() => setShowOverlay(true)}
+            />
+          </div>
+          <p className="warning-text">If the image is very large, please crop it down to extract text.</p>
           <button className="extract-button" onClick={handleExtractText}>Extract Text</button>
         </div>
       )}
