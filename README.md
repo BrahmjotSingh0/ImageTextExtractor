@@ -48,4 +48,18 @@ To run this project locally, follow these steps:
 5. Click the "Extract Text" button to extract text from the cropped image.
 6. The extracted text will be displayed in a text area below the image.
 
-## File Structure
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](http://_vscodecontentref_/2) file for details.
+
+## Acknowledgements
+
+- [Tesseract.js](https://github.com/naptha/tesseract.js)
+- [OpenCV.js](https://docs.opencv.org/4.x/d5/d10/tutorial_js_root.html)
+- [React Easy Crop](https://github.com/ValentinH/react-easy-crop)
+
