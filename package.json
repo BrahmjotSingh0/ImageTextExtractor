@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "opencv.js": "^1.2.1",
-    "react-easy-crop": "^5.2.0",
-    "tesseract.js": "^6.0.0",
-    "text-from-image": "^1.1.1"
-  }
-}
