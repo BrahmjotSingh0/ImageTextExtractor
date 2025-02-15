@@ -1,10 +1,10 @@
 :root {
   --primary-color: #0f0f0f;
-  --secondary-color: #1a1a1a;
+  --secondary-color: #1c1b1b9d;
   --accent-color: #00ffcc;
   --font-family: 'Roboto', sans-serif;
-  --header-height: 60px;
-  --footer-height: 40px;
+  --header-height: 10vh;
+  --footer-height: 10vh;
 }
 
 body {
