@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Tesseract from 'tesseract.js';
+import * as Tesseract from 'tesseract.js';
 import Overlay from '../Utilities/Overlay';
 import './Upload.css';
 
